@@ -16,12 +16,12 @@ namespace Authentication_Project
     public partial class Login : Form
     {
         string cn_string = Properties.Settings.Default.DatabaseConnectionString;
-
+        int answer;
         public Login()
         {
             InitializeComponent();
             this.FormClosing += Login_FormClosing;
-
+            GenerateCaptcha();
         }
 
         private void bt_signup_Click(object sender, EventArgs e)
@@ -40,7 +40,7 @@ namespace Authentication_Project
 
         private void bt_signin_Click(object sender, EventArgs e)
         {
-            if (tb_username.Text.Equals("") || tb_password.Text.Equals(""))
+            if (tb_username.Text.Equals("") || tb_password.Text.Equals("") || tb_mathproblem.Text.Equals(""))
             {
                 MessageBox.Show("One or more of the fields is empty!");
                 return;
@@ -53,6 +53,13 @@ namespace Authentication_Project
             if (tb_password.Text.Length < 6)
             {
                 MessageBox.Show("Password is shorter than 6 chars");
+                return;
+            }
+            if (!tb_mathproblem.Text.Equals(answer.ToString()))
+            {
+                MessageBox.Show("Wrong Captcha Answer");
+                GenerateCaptcha();
+                
                 return;
             }
             int blocked = 0;
@@ -69,8 +76,9 @@ namespace Authentication_Project
                 cn_connection.Close();
             } 
             // Check if numoftries > 5, and block the account
-            if(blocked > 5)
+            if(blocked >= 5)
             {
+
                 MessageBox.Show("This account is disabled due to multiple requests to sign in! please contact the administrator \n or just edit the database :)");
                 return;           
             }
@@ -124,6 +132,49 @@ namespace Authentication_Project
                     dr.Close();
                 }
             }
+        }
+
+        private void username_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+
+            if (!System.Text.RegularExpressions.Regex.IsMatch(e.KeyChar.ToString(), @"^[A-Za-z0-9_\b]+$"))
+            {
+                e.Handled = true;
+            }
+        }
+        private void password_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+
+            if (!System.Text.RegularExpressions.Regex.IsMatch(e.KeyChar.ToString(), @"^[A-Za-z0-9\b!@#$%^&*]+$"))
+            {
+                e.Handled = true;
+            }
+
+        }
+        private void GenerateCaptcha()
+        {
+            tb_mathproblem.Text = "";
+            Random rnd = new Random();
+            var number1 = rnd.Next(5, 10);
+            var number2 = rnd.Next(1, 5);
+            var operation = rnd.Next(1, 3);
+            string operatorString;
+            switch (operation)
+            {
+                case 1:
+                    answer = number1 + number2;
+                    operatorString = "+";
+                    break;
+                case 2:
+                    answer = number1 - number2;
+                    operatorString = "-";
+                    break;
+                default:
+                    answer = 0;
+                    operatorString = "?";
+                    break;
+            }
+           math_problem.Text = number1 + " " +operatorString + " " + number2;
         }
     }
 }

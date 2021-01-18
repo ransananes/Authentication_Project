@@ -99,11 +99,8 @@ namespace Authentication_Project
 
             cmd_Command = new SqlCommand(sql_Text, cn_connection);
                 
-             int a = cmd_Command.ExecuteNonQuery();
-            if(a== 0)
-            MessageBox.Show("Something went wrong!");
-            else
-            MessageBox.Show("Successfully completed!");
+              cmd_Command.ExecuteNonQuery();
+          MessageBox.Show("Successfully completed!");
 
                 }
             

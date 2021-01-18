@@ -36,6 +36,8 @@
             this.tb_username = new System.Windows.Forms.TextBox();
             this.bt_signin = new System.Windows.Forms.Button();
             this.bt_signup = new System.Windows.Forms.Button();
+            this.math_problem = new System.Windows.Forms.Label();
+            this.tb_mathproblem = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // tv_login
@@ -76,6 +78,7 @@
             this.tb_password.ShortcutsEnabled = false;
             this.tb_password.Size = new System.Drawing.Size(147, 22);
             this.tb_password.TabIndex = 9;
+            this.tb_password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.password_KeyPress);
             // 
             // label3
             // 
@@ -99,12 +102,13 @@
             this.tb_username.ShortcutsEnabled = false;
             this.tb_username.Size = new System.Drawing.Size(147, 22);
             this.tb_username.TabIndex = 7;
+            this.tb_username.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.username_KeyPress);
             // 
             // bt_signin
             // 
             this.bt_signin.BackColor = System.Drawing.SystemColors.Window;
             this.bt_signin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.8F);
-            this.bt_signin.Location = new System.Drawing.Point(336, 220);
+            this.bt_signin.Location = new System.Drawing.Point(336, 279);
             this.bt_signin.Name = "bt_signin";
             this.bt_signin.Size = new System.Drawing.Size(206, 66);
             this.bt_signin.TabIndex = 11;
@@ -124,12 +128,41 @@
             this.bt_signup.UseVisualStyleBackColor = false;
             this.bt_signup.Click += new System.EventHandler(this.bt_signup_Click);
             // 
+            // math_problem
+            // 
+            this.math_problem.BackColor = System.Drawing.Color.Transparent;
+            this.math_problem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
+            this.math_problem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.math_problem.Location = new System.Drawing.Point(245, 200);
+            this.math_problem.Name = "math_problem";
+            this.math_problem.Size = new System.Drawing.Size(129, 50);
+            this.math_problem.TabIndex = 14;
+            this.math_problem.Text = "math_problem";
+            this.math_problem.Visible = true;
+            // 
+            // tb_mathproblem
+            // 
+            this.tb_mathproblem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_mathproblem.Location = new System.Drawing.Point(394, 200);
+            this.tb_mathproblem.MaxLength = 2;
+            this.tb_mathproblem.Name = "tb_mathproblem";
+            this.tb_mathproblem.ShortcutsEnabled = false;
+            this.tb_mathproblem.Size = new System.Drawing.Size(147, 22);
+            this.tb_mathproblem.TabIndex = 13;
+            this.tb_mathproblem.Visible = true;
+            this.tb_mathproblem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.username_KeyPress);
+
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Authentication_Project.Properties.Resources.background_auth;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.math_problem);
+            this.Controls.Add(this.tb_mathproblem);
             this.Controls.Add(this.bt_signup);
             this.Controls.Add(this.bt_signin);
             this.Controls.Add(this.label4);
@@ -137,8 +170,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tb_username);
             this.Controls.Add(this.tv_login);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Authentication Project";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -154,5 +191,7 @@
         private System.Windows.Forms.TextBox tb_username;
         private System.Windows.Forms.Button bt_signin;
         private System.Windows.Forms.Button bt_signup;
+        private System.Windows.Forms.Label math_problem;
+        private System.Windows.Forms.TextBox tb_mathproblem;
     }
 }

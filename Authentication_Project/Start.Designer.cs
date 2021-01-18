@@ -196,6 +196,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Start";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Authentication Project";
             this.ResumeLayout(false);
             this.PerformLayout();
