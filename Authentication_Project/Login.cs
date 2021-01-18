@@ -86,6 +86,9 @@ namespace Authentication_Project
             if (cmd_Command.ExecuteScalar().ToString() == "1")
             {
                 MessageBox.Show("GRANTED ACCESS", "Access");
+                sql_Text = "update users set blocked='" + 0 + "' where username='" + tb_username.Text + "';";
+                cmd_Command = new SqlCommand(sql_Text, cn_connection);
+                cmd_Command.ExecuteNonQuery();
             }
             else
             {
