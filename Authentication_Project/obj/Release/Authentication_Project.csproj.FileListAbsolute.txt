@@ -1,0 +1,13 @@
+C:\Users\ransa\source\repos\Authentication_Project\Authentication_Project\bin\Release\Database.mdf
+C:\Users\ransa\source\repos\Authentication_Project\Authentication_Project\bin\Release\Database_log.ldf
+C:\Users\ransa\source\repos\Authentication_Project\Authentication_Project\bin\Release\Authentication_Project.exe.config
+C:\Users\ransa\source\repos\Authentication_Project\Authentication_Project\bin\Release\Authentication_Project.exe
+C:\Users\ransa\source\repos\Authentication_Project\Authentication_Project\bin\Release\Authentication_Project.pdb
+C:\Users\ransa\source\repos\Authentication_Project\Authentication_Project\obj\Release\Authentication_Project.Properties.Resources.resources
+C:\Users\ransa\source\repos\Authentication_Project\Authentication_Project\obj\Release\Authentication_Project.Start.resources
+C:\Users\ransa\source\repos\Authentication_Project\Authentication_Project\obj\Release\Authentication_Project.csproj.GenerateResource.cache
+C:\Users\ransa\source\repos\Authentication_Project\Authentication_Project\obj\Release\Authentication_Project.csproj.CoreCompileInputs.cache
+C:\Users\ransa\source\repos\Authentication_Project\Authentication_Project\obj\Release\Authentication_Project.exe
+C:\Users\ransa\source\repos\Authentication_Project\Authentication_Project\obj\Release\Authentication_Project.pdb
+C:\Users\ransa\source\repos\Authentication_Project\Authentication_Project\obj\Release\Authentication_Project.csprojAssemblyReference.cache
+C:\Users\ransa\source\repos\Authentication_Project\Authentication_Project\obj\Release\Authentication_Project.Login.resources
