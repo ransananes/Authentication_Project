@@ -119,7 +119,6 @@ namespace Authentication_Project
                 {
                      blocked = Int32.Parse(dr["blocked"].ToString());
                     dr.Close();
-                    MessageBox.Show("Number of tries left before the account will get disabled "+blocked);
                 }
             }
         }
