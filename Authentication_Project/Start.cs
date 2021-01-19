@@ -1,4 +1,5 @@
-﻿using System;
+﻿/*  PLEASE DON'T USE REVERSE ENGINERING :) */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

@@ -151,6 +151,15 @@ namespace Authentication_Project
             }
 
         }
+        private void Captcha_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+
+            if (!System.Text.RegularExpressions.Regex.IsMatch(e.KeyChar.ToString(), @"^[0-9\b]+$"))
+            {
+                e.Handled = true;
+            }
+
+        }
         private void GenerateCaptcha()
         {
             tb_mathproblem.Text = "";

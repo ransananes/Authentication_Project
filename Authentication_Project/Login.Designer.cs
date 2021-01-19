@@ -152,7 +152,7 @@
             this.tb_mathproblem.Size = new System.Drawing.Size(147, 22);
             this.tb_mathproblem.TabIndex = 13;
             this.tb_mathproblem.Visible = true;
-            this.tb_mathproblem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.username_KeyPress);
+            this.tb_mathproblem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Captcha_KeyPress);
 
             // 
             // Login
